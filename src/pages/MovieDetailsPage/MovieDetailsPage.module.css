@@ -1,0 +1,14 @@
+.link {
+    color: darkcyan;
+}
+
+.isActive {
+    color: orchid;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 12px;
+}
