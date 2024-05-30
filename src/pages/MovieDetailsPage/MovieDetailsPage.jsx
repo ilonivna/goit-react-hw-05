@@ -11,10 +11,10 @@ import css from "./MovieDetailsPage.module.css"
 
 export default function MovieDetailsPage() {
     const [movieDetails, setMovieDetails] = useState([]);
-    const movieId = useParams();
+    const {movieId} = useParams();
     const [loading, setLoading] = useState(false);
     const location = useLocation();
-    const backLinkRef = useRef(location.state ?? "/movies")
+    const backLinkRef = useRef(location.state?.from ?? '/');
     
     useEffect(() => {
         const getMovieDetails = async () => {

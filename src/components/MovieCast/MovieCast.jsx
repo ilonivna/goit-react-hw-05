@@ -6,7 +6,7 @@ import Loader from "../Loader/Loader";
 
 export default function MovieCast() {
     const [loading, setLoading] = useState(false);
-    const [castList, setCastlList] = useState([]);
+    const [castList, setCastList] = useState([]);
     const { movieId } = useParams();
 
     useEffect(() => {
@@ -16,6 +16,7 @@ export default function MovieCast() {
                 const data = await fetchMovieCredits(movieId);
                 setCastList(data.cast);
             } catch (error) {
+                console.log(error)
                 toast.error("Sorry, error occurred!")
             } finally {
                 setLoading(false);
