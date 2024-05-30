@@ -4,6 +4,7 @@ import MovieList from "../../components/MovieList/MovieList";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
+import css from "./MoviesPage.module.css"
 
 
 export default function MoviesPage() {
@@ -63,11 +64,11 @@ export default function MoviesPage() {
         <div>
             <Toaster/>
             <h3>Search a movie by title </h3>
-            <form onSubmit={handleSubmit}>
-            <input type="text" name="query"
+            <form className={css.form} onSubmit={handleSubmit}>
+            <input className={css.input} type="text" name="query"
                 autoFocus
                 placeholder="Type your title here.." />
-            <button type="submit">Search</button></form>
+            <button type="submit" className={css.btn}>Search</button></form>
             {loading && <Loader />}
             {error && <p>Sorry, an error has occurred, please reload the page</p>}
             {movies.length > 0 && <MovieList movies={movies} />}

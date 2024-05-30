@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchMovieCredits } from "../../movies-api";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../Loader/Loader";
+import css from "./MovieCast.module.css"
 
 export default function MovieCast() {
     const [loading, setLoading] = useState(false);
@@ -30,11 +31,11 @@ export default function MovieCast() {
     return (
         <div>
             <div><Toaster /></div>
-            <ul>
+            <ul className={css.list}>
                 {loading && <Loader />}
                 {castList.length > 0 && (castList.map(({ id, name, profile_path, character }) => (
-                    <li key={id}>
-                        <img src={profile_path ? `https://image.tmdb.org/t/p/w200${profile_path}` : defaultImg} alt={name} loading="lazy" width="140" />
+                    <li className={css.item} key={id}>
+                        <img className={css.img} src={profile_path ? `https://image.tmdb.org/t/p/w200${profile_path}` : defaultImg} alt={name} loading="lazy" width="140" />
                         <h4>{name}</h4>
                         <p>Character: {character}</p>
                     </li>

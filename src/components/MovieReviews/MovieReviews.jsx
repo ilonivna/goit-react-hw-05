@@ -4,7 +4,7 @@ import { fetchMovieReviews } from "../../movies-api";
 import Loader from "../Loader/Loader";
 import toast, { Toaster } from "react-hot-toast";
 import { FaRegUserCircle } from "react-icons/fa";
-
+import css from "./MovieReviews.module.css"
 
 
 export default function MovieReviews() {
@@ -33,8 +33,8 @@ export default function MovieReviews() {
     <div><div><Toaster /></div>
         { loading && <Loader /> }
             {reviewsList.length > 0 && (
-                <ul>
-                    {reviewsList.map(({ author, content, id }) => (<li key={id}>
+                <ul className={css.list}>
+                    {reviewsList.map(({ author, content, id }) => (<li key={id} className={css.item}>
                         <p><FaRegUserCircle />
                             {author}</p>
                         <p>{content}</p>

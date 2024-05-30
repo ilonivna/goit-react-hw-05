@@ -1,7 +1,16 @@
 .link {
     color: darkcyan;
+text-shadow: 13px 2px 16px rgba(15, 225, 217, 0.98);
+font-size: 1.4em;
 }
 
 .isActive {
     color: orchid;
 }
+
+.list {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+

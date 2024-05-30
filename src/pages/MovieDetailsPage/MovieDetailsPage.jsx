@@ -47,14 +47,14 @@ export default function MovieDetailsPage() {
             {loading && <Loader />}
             <div className={css["info-container"]}>
                 <div>
-                    <img src={poster_path ? `https://image.tmdb.org/t/p/w300${poster_path}`
+                    <img className={css.img} src={poster_path ? `https://image.tmdb.org/t/p/w300${poster_path}`
 : defaultImg} loading="lazy" alt="Poster" />
                 </div>
                 <div>
                     <h2>{original_title}</h2>
                     <p>User score: {scoreToFixed}</p>
                     <h4>Overview</h4>
-                    <p>{overview}</p>
+                    <p className={css.overview}>{overview}</p>
                     <h4>Genres</h4>
                     <ul>
                         {genres && genres.length && genres.map(({ id, name })=> <li key={id}>{name}</li>)}
@@ -65,10 +65,10 @@ export default function MovieDetailsPage() {
 
             <ul>
                 <li>
-                    <NavLink to="cast">Cast</NavLink>
+                    <NavLink to="cast" className={getLinkClass}>Cast</NavLink>
                 </li>
                 <li>
-                    <NavLink to="reviews">Reviews</NavLink>
+                    <NavLink to="reviews" className={getLinkClass}>Reviews</NavLink>
                 </li>
             </ul>
 

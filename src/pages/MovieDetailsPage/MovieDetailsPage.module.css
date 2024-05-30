@@ -9,6 +9,18 @@
 .info-container {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 30px;
     padding: 12px;
+    width: 900px;
+    margin-bottom: 20px;
+}
+
+.img {
+border-radius: 10px;
+display: block;
+width: 600px;
+}
+
+.overview {
+    color: #02bfb6;
 }
